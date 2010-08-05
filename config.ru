@@ -1,2 +1,2 @@
-load './ping.rb'
+require 'heroku-sinatra-app'
 run Sinatra::Application
