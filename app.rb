@@ -30,12 +30,11 @@ end
 
 @@callbacks = []
 post '/callbacks' do
-  @callbacks << request.body.read
-  puts "received callback #{@callbacks.last}"
+  @@callbacks << request.body.read
 end
 
 get '/callbacks' do
-  "#{@@callbacks.inspect}" 
+  "#{@@callbacks.join("\n\r\n\r")}" 
 end
 
 # Displays a widget
