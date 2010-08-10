@@ -18,11 +18,28 @@ module Constants
   end
 end
 
+# Sanity method
 get '/ping' do
   erb :pong
 end
 
+# Displays a faux photo album page
 get '/' do
+
+end
+
+@@callbacks = []
+post '/callbacks' do
+  @callbacks << request.body.read
+  puts "received callback #{@callbacks.last}"
+end
+
+get '/last_callback' do
+  "#{@@callback.inspect}" 
+end
+
+# Displays a widget
+get '/display' do
   @params = {}
   
   # Parameters must be sorted in alphabetical order by key.
