@@ -34,7 +34,7 @@ post '/callbacks' do
   puts "received callback #{@callbacks.last}"
 end
 
-get '/last_callback' do
+get '/callbacks' do
   "#{@@callback.inspect}" 
 end
 
