@@ -28,12 +28,15 @@ get '/' do
 
 end
 
-@@callbacks = []
 post '/callbacks' do
+  puts "GETTING A CALL BACK"
+  @@callbacks ||= []
   @@callbacks << request.body.read
+  puts "HERE IT IS #{@@callbacks.inspect}"
 end
 
 get '/callbacks' do
+  @@callbacks ||= []
   "#{@@callbacks.join("\n\r\n\r")}" 
 end
 

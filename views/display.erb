@@ -10,7 +10,8 @@
   </head>
   <body>
     <h1>SunDawg's Animoto Widget</h1> 
-    <p><a href="/">Reload</a></p>
+    <p><a href="/display">Reload</a></p>
+    <p><a href="/callbacks">View Callbacks</a></p>
     <form style="display: none" id="configuration" method="POST" target="widget" action="<%= Constants::App::HOST %>/workflow">
       <% @params.each_pair do |k, v| %>
         <input type="hidden" name="<%= k %>" value="<%= v %>"/>
