@@ -25,14 +25,18 @@ end
 
 # Displays a faux photo album page
 get '/' do
-
+  @images = []
+  @images << 'http://s3-p.animoto.com/Image/maYvpK03IYvnihGuB0YkAg/l.jpg'
+  @images << 'http://s3-p.animoto.com/Image/1bROwNFCqptsf2tYovp11g/l.jpg'
+  @images << 'http://s3-p.animoto.com/Image/Pvny15tMg8w027iAx52ZFw/l.jpg'
+  @images << 'http://s3-p.animoto.com/Image/a7PLsMNvwKTiphwFQTZSBQ/l.jpg'
+  @images << 'http://s3-p.animoto.com/Image/47VqIpXpoEmoK3yB0MPM1Q/l.jpg'
+  erb :index 
 end
 
 post '/callbacks' do
-  puts "GETTING A CALL BACK"
   @@callbacks ||= []
   @@callbacks << request.body.read
-  puts "HERE IT IS #{@@callbacks.inspect}"
 end
 
 get '/callbacks' do
@@ -41,7 +45,7 @@ get '/callbacks' do
 end
 
 # Displays a widget
-get '/display' do
+get '/widget' do
   @params = {}
   
   # Parameters must be sorted in alphabetical order by key.
@@ -57,5 +61,5 @@ get '/display' do
   # We don't need the partner secret once the signature is calculated. We also don't want to pass it over HTTP.
   @params.delete('partnerSecret')
 
-  erb :display
+  erb :widget
 end
