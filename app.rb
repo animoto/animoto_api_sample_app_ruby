@@ -35,7 +35,7 @@ post '/callbacks' do
 end
 
 get '/callbacks' do
-  "#{@@callback.inspect}" 
+  "#{@@callbacks.inspect}" 
 end
 
 # Displays a widget
