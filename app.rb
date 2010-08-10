@@ -57,5 +57,5 @@ get '/display' do
   # We don't need the partner secret once the signature is calculated. We also don't want to pass it over HTTP.
   @params.delete('partnerSecret')
 
-  erb :index
+  erb :display
 end
