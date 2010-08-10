@@ -11,7 +11,7 @@
   <body>
     <h1>SunDawg's Animoto Widget</h1> 
     <p><a href="/">Home</a></p>
-    <p><a href="/widget">Reload</a></p>
+    <p><a href="/widget?<%= request.query_string %>">Reload</a></p>
     <p><a href="/callbacks">View Callbacks</a></p>
     <form style="display: none" id="configuration" method="POST" target="widget" action="<%= Constants::App::HOST %>/workflow">
       <%# Repopulate the override parameters from the first HTML form %>
