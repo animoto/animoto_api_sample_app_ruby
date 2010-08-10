@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'erb'
+require 'cgi'
 
 # These are our constants for our Animoto account and the widget we want to create.
 module Constants
