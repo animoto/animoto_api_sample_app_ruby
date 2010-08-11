@@ -7,14 +7,7 @@ require 'cgi'
 
 class PartnerApp < Sinatra::Base
   @@callbacks = []
-
-  require 'constants'
-  require 'endpoints'
-  require 'templates'
-
-  Dir["#{PartnerApp.root}/lib/**/*.rb"].sort.each do |file|
-    require file
-  end
+  @@images = []
 
   class << self
     def root
@@ -29,8 +22,25 @@ class PartnerApp < Sinatra::Base
       @@callbacks
     end
 
+    def add_image(image)
+      @@images << image
+    end
+
+    def images
+      @@images
+    end
+
     def generate_transaction_token
       Time.now.to_f.to_s.gsub('.', '')
     end
+  end
+
+  require 'configuration'
+  require 'constants'
+  require 'endpoints'
+  require 'templates'
+
+  Dir["#{PartnerApp.root}/lib/**/*.rb"].sort.each do |file|
+    require file
   end
 end

@@ -11,4 +11,9 @@ module PartnerApp::Constants
   module WidgetService 
     HOST = 'http://widget-service-staging.animoto.com'
   end
+
+  module Platform
+    PLATFORM_USERNAME = 'bb0d0e005ac4012dc17712313b013462'
+    PLATFORM_PASSWORD = 'c0fe4cfca8bf544b8d0e687247a600ef55ff82e3'
+  end
 end
