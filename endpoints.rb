@@ -5,12 +5,6 @@ end
 
 # Displays a faux photo album page
 get '/' do
-  @images = []
-  @images << 'http://s3-p.animoto.com/Image/maYvpK03IYvnihGuB0YkAg/l.jpg'
-  @images << 'http://s3-p.animoto.com/Image/1bROwNFCqptsf2tYovp11g/l.jpg'
-  @images << 'http://s3-p.animoto.com/Image/Pvny15tMg8w027iAx52ZFw/l.jpg'
-  @images << 'http://s3-p.animoto.com/Image/a7PLsMNvwKTiphwFQTZSBQ/l.jpg'
-  @images << 'http://s3-p.animoto.com/Image/47VqIpXpoEmoK3yB0MPM1Q/l.jpg'
   erb :index 
 end
 
