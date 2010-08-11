@@ -3,11 +3,7 @@
     document.getElementById('configuration').submit();
   });
 </script>
-
 <h1>SunDawg's Animoto Widget</h1> 
-<p><a href="/">Home</a></p>
-<p><a href="/widget?<%= request.query_string %>">Reload</a></p>
-<p><a href="/callbacks">View Callbacks</a></p>
 <form style="display: none" id="configuration" method="POST" target="widget" action="<%= PartnerApp::Constants::WidgetService::HOST %>/workflow">
   <%# Repopulate the override parameters from the first HTML form %>
   <% CGI::unescape(request.query_string).split('&').each do |i| %>
