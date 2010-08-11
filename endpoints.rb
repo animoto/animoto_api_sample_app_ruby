@@ -9,7 +9,7 @@ get '/' do
 end
 
 post '/callbacks' do
-  PartnerApp.add_callback << Callback.new(request.body.read, params[:transactionToken])
+  PartnerApp.add_callback Callback.new(request.body.read, params[:transactionToken])
 end
 
 get '/callbacks' do
