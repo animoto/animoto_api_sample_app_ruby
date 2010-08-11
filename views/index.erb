@@ -1,19 +1,13 @@
-<html>
-  <head>
-    <title></title>
-  </head>
-  <body>
-    <h1>Photo Album - SunDawg's Little Puppies</h1>
-    <% @images.each do |image| %>
-      <img src="<%= image %>" height="100"></img>
-    <% end %>
-    <form method="GET" action='/widget'>
-      <% count = 1 %>
-      <% @images.each do |image| %>
-        <input type="hidden" name="workspace.defaultVisuals[<%= count %>].url" value="<%= image %>"/>
-        <% count += 1 %>
-      <% end %> 
-      <input type="submit" value="Make Animoto Video"/>
-    </form>
-  </body>
-</html>
+<h1>Photo Album - SunDawg's Little Puppies</h1>
+<% @images.each do |image| %>
+  <img src="<%= image %>" height="100"></img>
+<% end %>
+<form method="GET" action='/widget'>
+  <% count = 1 %>
+  <% @images.each do |image| %>
+    <input type="hidden" name="workspace.defaultVisuals[<%= count %>].url" value="<%= image %>"/>
+    <% count += 1 %>
+  <% end %> 
+  <input type="hidden" name="transactionToken" value="<%= PartnerApp.generate_transaction_token %>">
+  <input type="submit" value="Make Animoto Video"/>
+</form>
