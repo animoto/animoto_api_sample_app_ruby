@@ -47,6 +47,8 @@ get '/widget' do
 
   # Let's generate the signature for our widget
   @params['signature'] = Digest::MD5.hexdigest(source)
+  #  <input type="hidden" name="transactionToken" value="<%= PartnerApp.generate_transaction_token %>">
+  @params['transactionToken'] = PartnerApp.generate_transaction_token
 
   # We don't need the partner secret once the signature is calculated. We also don't want to pass it over HTTP.
   @params.delete('partnerSecret')

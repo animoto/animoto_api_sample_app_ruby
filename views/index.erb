@@ -8,6 +8,5 @@
     <input type="hidden" name="workspace.defaultVisuals[<%= count %>].url" value="<%= image %>"/>
     <% count += 1 %>
   <% end %> 
-  <input type="hidden" name="transactionToken" value="<%= PartnerApp.generate_transaction_token %>">
   <input type="submit" value="Make Animoto Video"/>
 </form>
