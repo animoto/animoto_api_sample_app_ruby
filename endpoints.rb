@@ -16,6 +16,10 @@ get '/callbacks' do
   erb :callbacks
 end
 
+# Fill me in
+get '/finalize' do
+end
+
 get '/play' do
   @video_url = params['links']['video'] 
   erb :play
