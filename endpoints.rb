@@ -28,6 +28,14 @@ end
 # Displays a widget
 get '/widget' do
   @params = {}
+
+  # Set no cache headers
+  response.headers["Last-Modified"] = Time.now.httpdate
+  response.headers["Expires"] = "0"
+  # HTTP 1.0
+  response.headers["Pragma"] = "no-cache"
+  # HTTP 1.1 'pre-check=0, post-check=0' (IE specific)
+  response.headers["Cache-Control"] = 'no-store, no-cache, must-revalidate, max-age=0, pre-check=0, post-check=0'
   
   # Parameters must be sorted in alphabetical order by key.
   @params['appId'] = PartnerApp::Constants::Widget::APP_ID

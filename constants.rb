@@ -9,7 +9,7 @@ module PartnerApp::Constants
   end
 
   module WidgetService 
-    HOST = 'http://widget-service-staging.animoto.com'
+    HOST = 'https://widget-service-staging.animoto.com'
   end
 
   module Platform
