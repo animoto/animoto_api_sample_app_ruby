@@ -17,8 +17,7 @@ get '/callbacks' do
 end
 
 get '/play' do
-  puts "HERE ARE PARAMS " + params.inspect
-  @video_url = 'foo'
+  @video_url = params['links']['video'] 
   erb :play
 end
 
