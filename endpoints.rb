@@ -16,6 +16,12 @@ get '/callbacks' do
   erb :callbacks
 end
 
+get '/play' do
+  puts "HERE ARE PARAMS " + params.inspect
+  @video_url = 'foo'
+  erb :play
+end
+
 # Displays a widget
 get '/widget' do
   @params = {}
