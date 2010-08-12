@@ -1,2 +1,5 @@
 <h1>Your Animoto Video</h1>
-<video src="<%= @video_url %>"/>
+<a href="<%= @video_url %>" style="display:block;height:480px;width:800px;" id="player"></a>
+<script language="JavaScript">
+  flowplayer("player", "/flowplayer-3.2.2.swf");
+</script>
