@@ -30,6 +30,7 @@ get '/widget' do
   @params = {}
 
   # Set no cache headers
+  @meta_cache = true
   response.headers["Last-Modified"] = Time.now.httpdate
   response.headers["Expires"] = "0"
   # HTTP 1.0
