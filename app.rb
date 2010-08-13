@@ -2,6 +2,9 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/base'
 require 'animoto/client'
+
+Animoto::Client::API_ENDPOINT = "https://api2-sandbox.animoto.com/"
+
 require 'erb'
 require 'cgi'
 
