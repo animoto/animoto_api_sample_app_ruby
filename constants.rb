@@ -1,7 +1,7 @@
 module PartnerApp::Constants
   module Partner
     PARTNER_SECRET = '93823b7bed3552131a7f'
-    PARTNER_ID = 'ac42be375feb79fe55e6"'
+    PARTNER_ID = 'ac42be375feb79fe55e6'
   end
 
   module Widget
