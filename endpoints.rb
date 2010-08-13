@@ -18,6 +18,24 @@ end
 
 # Fill me in
 get '/finalize' do
+  client = Animoto::Client.new
+  storyboard = client.find Animoto::Storyboard, CGI.unescape(params['links']['storyboard'])
+  manifest = RenderingManifest.new storyboard, :resolution => "1080p", :format => "flv", :framerate => 30
+  job = client.render! manifest
+  @job_url = job.url
+  erb :finalize
+end
+
+get '/poll' do
+  content_type :json
+  client = Animoto::Client.new
+  job = client.find Animoto::RenderingJob, params['job_url']
+  if job.completed?
+    video = client.find Animoto::Video, job.video_url
+    { 'completed' => true, 'url' => "/play?links[video]=#{video.download_url}" }.to_json
+  else
+    { 'completed' => false }.to_json
+  end
 end
 
 get '/play' do
