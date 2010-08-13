@@ -1,19 +1,19 @@
 <script type="text/javascript" charset="utf-8">
-$(function () {
-  var interval = setInterval(function () {
+$(function() {
+  var interval = setInterval(function() {
 	  $.ajax({
 			url: '/poll?job_url=<%= @job_url %>',
 			dataType: 'json',
 			success: function(data) {
-				if (data.complete) {
-					interval.clearInterval();
+				if (data.completed) {
 					window.location = data.url;
-				} 
+				}
 			},
 			error: function() {
+			  alert('Oh no, something went wrong.');
 				interval.clearInterval();
 			}
-		}
+		});
 	}, 5000);
 });
 </script>
