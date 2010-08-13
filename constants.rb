@@ -1,19 +1,19 @@
 module PartnerApp::Constants
   module Partner
-    PARTNER_SECRET = '556fcc77f4a2dac6e48a'
-    PARTNER_ID = 'dfeb816403a8f5ddfdee'
+    PARTNER_SECRET = '93823b7bed3552131a7f'
+    PARTNER_ID = 'ac42be375feb79fe55e6'
   end
 
   module Widget
-    APP_ID = 'e35c436e7ed1304cd08d'
+    APP_ID = '54ef03a11507570fcb49'
   end
 
   module WidgetService 
-    HOST = 'https://widget-service-staging.animoto.com'
+    HOST = 'https://widget-service-sandbox.animoto.com'
   end
 
   module Platform
-    PLATFORM_USERNAME = 'bb0d0e005ac4012dc17712313b013462'
-    PLATFORM_PASSWORD = 'c0fe4cfca8bf544b8d0e687247a600ef55ff82e3'
+    PLATFORM_USERNAME = '99320bd08867012dc34a12313b045877'
+    PLATFORM_PASSWORD = '867319c36489597437c6965fea6b1512d7ece403'
   end
 end
