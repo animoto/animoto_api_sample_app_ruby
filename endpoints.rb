@@ -18,9 +18,9 @@ end
 
 # Fill me in
 get '/finalize' do
-  client = Animoto::Client.new
+  client = Animoto::Client.new PartnerApp::Constants::Platform::PLATFORM_USERNAME, PartnerApp::Constants::Platform::PLATFORM_PASSWORD
   storyboard = client.find Animoto::Storyboard, CGI.unescape(params['links']['storyboard'])
-  manifest = RenderingManifest.new storyboard, :resolution => "1080p", :format => "flv", :framerate => 30
+  manifest = Animoto::RenderingManifest.new storyboard, :resolution => "1080p", :format => "flv", :framerate => 30
   job = client.render! manifest
   @job_url = job.url
   erb :finalize
@@ -28,7 +28,7 @@ end
 
 get '/poll' do
   content_type :json
-  client = Animoto::Client.new
+  client = Animoto::Client.new PartnerApp::Constants::Platform::PLATFORM_USERNAME, PartnerApp::Constants::Platform::PLATFORM_PASSWORD
   job = client.find Animoto::RenderingJob, params['job_url']
   if job.completed?
     video = client.find Animoto::Video, job.video_url
