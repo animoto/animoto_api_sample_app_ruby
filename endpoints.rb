@@ -32,14 +32,14 @@ get '/poll' do
   job = client.find Animoto::RenderingJob, params['job_url']
   if job.completed?
     video = client.find Animoto::Video, job.video_url
-    { 'completed' => true, 'url' => "/play?links[video]=#{video.download_url}" }.to_json
+    {'completed' => true, 'url' => "/play?links[file]=#{CGI::escape(video.download_url)}"}.to_json
   else
-    { 'completed' => false }.to_json
+    {'completed' => false}.to_json
   end
 end
 
 get '/play' do
-  @video_url = params['links']['video'] 
+  @video_url = CGI::escape(params['links']['file'])
   erb :play
 end
 
