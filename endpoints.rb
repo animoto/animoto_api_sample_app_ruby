@@ -20,7 +20,7 @@ end
 get '/finalize' do
   client = Animoto::Client.new PartnerApp::Constants::Platform::PLATFORM_USERNAME, PartnerApp::Constants::Platform::PLATFORM_PASSWORD
   storyboard = client.find Animoto::Storyboard, CGI.unescape(params['links']['storyboard'])
-  manifest = Animoto::RenderingManifest.new storyboard, :resolution => "1080p", :format => "flv", :framerate => 30
+  manifest = Animoto::RenderingManifest.new storyboard, :resolution => "480p", :format => "h264", :framerate => 30
   job = client.render! manifest
   @job_url = job.url
   erb :finalize
