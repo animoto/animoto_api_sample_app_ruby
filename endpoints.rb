@@ -1,22 +1,25 @@
-# Sanity method
+# Sanity method to insure everything is working.
 get '/ping' do
   erb :pong
 end
 
-# Displays a faux photo album page
+# Displays a faux photo album page.
 get '/' do
   erb :index 
 end
 
+# Handles callbacks from the Widget Service and stores them in a simple list.
 post '/callbacks' do
   PartnerApp.add_callback Callback.new(request.body.read, params[:transactionToken])
 end
 
+# Show all callbacks received from the Widget Service
 get '/callbacks' do
   erb :callbacks
 end
 
-# Fill me in
+# Handles a Storyboard from the Widget and creates a Render via the API Gem with it.
+# Render a page that will AJAX Poll the status of the Render until it is completed.
 get '/finalize' do
   client = Animoto::Client.new PartnerApp::Constants::Platform::PLATFORM_USERNAME, PartnerApp::Constants::Platform::PLATFORM_PASSWORD
   storyboard = client.find Animoto::Storyboard, CGI.unescape(params['links']['storyboard'])
@@ -26,6 +29,8 @@ get '/finalize' do
   erb :finalize
 end
 
+
+# See if our API Render is compete or not.
 get '/poll' do
   content_type :json
   client = Animoto::Client.new PartnerApp::Constants::Platform::PLATFORM_USERNAME, PartnerApp::Constants::Platform::PLATFORM_PASSWORD
@@ -38,12 +43,13 @@ get '/poll' do
   end
 end
 
+# View the Animoto Video in a standard web video player.
 get '/play' do
   @video_url = CGI::escape(params['links']['file'])
   erb :play
 end
 
-# Displays a widget
+# Calcalates your Widget Signature and displays the widget in an iframe.
 get '/widget' do
   @params = {}
 
@@ -65,7 +71,8 @@ get '/widget' do
 
   # Let's generate the signature for our widget
   @params['signature'] = Digest::MD5.hexdigest(source)
-  #  <input type="hidden" name="transactionToken" value="<%= PartnerApp.generate_transaction_token %>">
+
+  # This is our transaction token to map Animoto Workflow events back to our application session.
   @params['transactionToken'] = PartnerApp.generate_transaction_token
 
   # We don't need the partner secret once the signature is calculated. We also don't want to pass it over HTTP.
