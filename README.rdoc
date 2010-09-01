@@ -1,0 +1,46 @@
+= Animoto Widget SunDawgCo
+
+== About
+
+This is a sample Ruby Web application to integrate with the Animoto Workflow Widget. 
+
+== Components Covered
+
+The sample application tests the following concepts when working with the Animoto Workflow Widget:
+
+* Creating a widget with a set of pre-selected images with proper signature security.
+* Displaying the widget in an iframe while your site maintains control of the outer frame/browser.
+* Handling the final video callback from the widget (if video generation is enabled for your widget).
+* Handling the Animoto Storyboard from the widget and generating a video through the Animoto API via the API Ruby Gem (if video generation is disabled for your widget).
+* Capturing callbacks from Widget Services when rendering events are completed from your widget.
+
+== Dependencies
+
+The Ruby framework used to run this application was Sinatra 1.0. 
+
+http://www.sinatrarb.com/
+
+You can install Sinatra, by running:
+
+  gem install sinatra
+
+== What You Need From Animoto
+
+You will need the following from Animoto to get your application to work:
+
+* Partner ID
+* Partner Secret
+* A Workflow Widget Application ID
+* Animoto Platform Key
+* Animoto Platform Secret 
+
+== Try It Out
+
+You can try the application here:
+
+http://stark-stream-51.heroku.com/
+
+== More Information
+
+* The Animoto API - http://animoto.com/developer/api
+* The Animoto API Client Gem - http://rubygems.org/gems/animoto
