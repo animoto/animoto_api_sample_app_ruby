@@ -18,7 +18,7 @@ The sample application tests the following concepts when working with the Animot
 
 The Ruby framework used to run this application was Sinatra 1.0. 
 
-http://www.sinatrarb.com/
+http://www.sinatrarb.com
 
 You can install Sinatra, by running:
 
@@ -38,7 +38,7 @@ You will need the following from Animoto to get your application to work:
 
 You can try the application here:
 
-http://stark-stream-51.heroku.com/
+http://stark-stream-51.heroku.com
 
 == More Information
 
