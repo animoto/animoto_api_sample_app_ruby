@@ -21,11 +21,7 @@ end
 # Handles a Storyboard from the Widget and creates a Render via the API Gem with it.
 # Render a page that will AJAX Poll the status of the Render until it is completed.
 get '/finalize' do
-  puts "HERE IS PLATFORM USER " + PartnerApp::Constants::Platform::PLATFORM_USERNAME
-  puts "HERE IS PASSWORD " +  PartnerApp::Constants::Platform::PLATFORM_PASSWORD
-  puts "ABOUT TO CREATE CLIENT"
   client = Animoto::Client.new PartnerApp::Constants::Platform::PLATFORM_USERNAME, PartnerApp::Constants::Platform::PLATFORM_PASSWORD
-  puts "GOT ME A CLIENT"
   storyboard = client.find Animoto::Storyboard, CGI.unescape(params['links']['storyboard'])
   manifest = Animoto::RenderingManifest.new storyboard, :resolution => "480p", :format => "h264", :framerate => 30
   job = client.render! manifest
