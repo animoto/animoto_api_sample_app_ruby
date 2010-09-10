@@ -2,7 +2,7 @@
 $(function() {
   var interval = setInterval(function() {
 	  $.ajax({
-			url: '/poll?job_url=<%= @job_url %>',
+			url: '/poll?rnd=' + Math.floor(Math.random() * 2048) + '&job_url=<%= @job_url %>',
 			dataType: 'json',
 			success: function(data) {
 				if (data.completed) {
