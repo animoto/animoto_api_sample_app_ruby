@@ -3,7 +3,7 @@ require 'sinatra'
 require 'sinatra/base'
 require 'animoto/client'
 
-Animoto::Client::API_ENDPOINT = "https://api2-sandbox.animoto.com/"
+Animoto::Client::API_ENDPOINT = PartnerApp::Constants::Api2::HOST unless defined?(Animoto::Client::API_ENDPOINT)
 
 require 'erb'
 require 'cgi'

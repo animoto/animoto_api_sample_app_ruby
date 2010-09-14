@@ -1,6 +1,6 @@
 # Sanity method to insure everything is working.
 get '/ping' do
-  erb :pong
+  halt 200, 'pong'
 end
 
 # Displays a faux photo album page.
@@ -11,6 +11,7 @@ end
 # Handles callbacks from the Widget Service and stores them in a simple list.
 post '/callbacks' do
   PartnerApp.add_callback Callback.new(request.body.read, params[:transactionToken])
+  halt 201
 end
 
 # Show all callbacks received from the Widget Service

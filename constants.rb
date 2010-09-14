@@ -11,6 +11,10 @@ module PartnerApp::Constants
   module WidgetService 
     HOST = 'https://widget-service-sandbox.animoto.com'
   end
+   
+  module Api2
+    HOST = 'https://api2-sandbox.animoto.com/'
+  end
 
   module Platform
     PLATFORM_USERNAME = '99320bd08867012dc34a12313b045877'
