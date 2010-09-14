@@ -40,6 +40,10 @@ You can try the application here:
 
 http://stark-stream-51.heroku.com
 
+You can run tests to verify the application via:
+
+ruby test/endpoints_test.rb
+
 == More Information
 
 * The Animoto API - http://animoto.com/developer/api
