@@ -38,7 +38,7 @@ You will need the following from Animoto to get your application to work:
 
 You can try the application here:
 
-http://stark-stream-51.heroku.com
+http://ruby-workflow-sample.animoto.com
 
 You can run tests to verify the application via:
 
