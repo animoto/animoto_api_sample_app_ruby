@@ -23,8 +23,8 @@ end
 # Render a page that will AJAX Poll the status of the Render until it is completed.
 get '/finalize' do
   client = Animoto::Client.new PartnerApp::Constants::Platform::PLATFORM_USERNAME, PartnerApp::Constants::Platform::PLATFORM_PASSWORD
-  storyboard = client.find Animoto::Storyboard, CGI.unescape(params['links']['storyboard'])
-  manifest = Animoto::RenderingManifest.new storyboard, :resolution => "480p", :format => "h264", :framerate => 30
+  storyboard = client.find Animoto::Resources::Storyboard, CGI.unescape(params['links']['storyboard'])
+  manifest = Animoto::Manifests::Rendering.new storyboard, :resolution => "480p", :format => "h264", :framerate => 30
   job = client.render! manifest
   @job_url = job.url
   erb :finalize
@@ -35,9 +35,9 @@ end
 get '/poll' do
   content_type :json
   client = Animoto::Client.new PartnerApp::Constants::Platform::PLATFORM_USERNAME, PartnerApp::Constants::Platform::PLATFORM_PASSWORD
-  job = client.find Animoto::RenderingJob, params['job_url']
+  job = client.find Animoto::Jobs::Rendering, params['job_url']
   if job.completed?
-    video = client.find Animoto::Video, job.video_url
+    video = client.find Animoto::Resources::Video, job.video_url
     {'completed' => true, 'url' => "/play?links[file]=#{CGI::escape(video.download_url)}"}.to_json
   else
     {'completed' => false}.to_json
