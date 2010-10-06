@@ -35,7 +35,7 @@ end
 get '/poll' do
   content_type :json
   client = Animoto::Client.new PartnerApp::Constants::Platform::PLATFORM_USERNAME, PartnerApp::Constants::Platform::PLATFORM_PASSWORD
-  job = client.find Animoto::Jobs::Rendering, params['job_url']
+  job = client.find Animoto::Resources::Jobs::Rendering, params['job_url']
   if job.completed?
     video = client.find Animoto::Resources::Video, job.video_url
     {'completed' => true, 'url' => "/play?links[file]=#{CGI::escape(video.download_url)}"}.to_json
