@@ -54,8 +54,8 @@ class EndpointsTest < Test::Unit::TestCase
     mock_rendering_job = stub('completed?' => true, :video_url => video_url)
     mock_video = stub(:download_url => "http://download.com/url")
 
-    Animoto::Client.any_instance.expects(:find).with(Animoto::RenderingJob, rendering_job_url).once.returns(mock_rendering_job)
-    Animoto::Client.any_instance.expects(:find).with(Animoto::Video, video_url).once.returns(mock_video) 
+    Animoto::Client.any_instance.expects(:find).with(Animoto::Resources::Jobs::Rendering, rendering_job_url).once.returns(mock_rendering_job)
+    Animoto::Client.any_instance.expects(:find).with(Animoto::Resources::Video, video_url).once.returns(mock_video) 
     get '/poll', {:job_url => rendering_job_url}
     assert_equal 200, last_response.status 
     hash = JSON::parse(last_response.body)
@@ -70,8 +70,8 @@ class EndpointsTest < Test::Unit::TestCase
     mock_rendering_manifest = stub
     mock_rendering_job = stub(:url => "http://some.com/url")
 
-    Animoto::Client.any_instance.expects(:find).with(Animoto::Storyboard, storyboard_link).once.returns(mock_storyboard)
-    Animoto::RenderingManifest.expects(:new).with(mock_storyboard, :resolution => "480p", :format => "h264", :framerate => 30).once.returns(mock_rendering_manifest)
+    Animoto::Client.any_instance.expects(:find).with(Animoto::Resources::Storyboard, storyboard_link).once.returns(mock_storyboard)
+    Animoto::Manifests::Rendering.expects(:new).with(mock_storyboard, :resolution => "480p", :format => "h264", :framerate => 30).once.returns(mock_rendering_manifest)
     Animoto::Client.any_instance.expects('render!').with(mock_rendering_manifest).once.returns(mock_rendering_job) 
 
     get '/finalize', {'links[storyboard]' => storyboard_link}
