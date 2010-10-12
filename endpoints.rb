@@ -38,9 +38,11 @@ get '/poll' do
   job = client.find Animoto::Resources::Jobs::Rendering, params['job_url']
   if job.completed?
     video = client.find Animoto::Resources::Video, job.video_url
-    {'completed' => true, 'url' => "/play?links[file]=#{CGI::escape(video.download_url)}"}.to_json
+    {'completed' => true, 'keepGoing' => false, 'url' => "/play?links[file]=#{CGI::escape(video.download_url)}"}.to_json
+  elsif job.failed?
+    {'completed' => false, 'keepGoing' => false }.to_json
   else
-    {'completed' => false}.to_json
+    {'completed' => false, 'keepGoing' => true }.to_json
   end
 end
 
