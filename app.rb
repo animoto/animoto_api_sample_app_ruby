@@ -2,9 +2,6 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/base'
 require 'animoto/client'
-
-Animoto::Client::API_ENDPOINT = PartnerApp::Constants::Api2::HOST unless defined?(Animoto::Client::API_ENDPOINT)
-
 require 'erb'
 require 'cgi'
 
@@ -46,4 +43,6 @@ class PartnerApp < Sinatra::Base
   Dir["#{PartnerApp.root}/lib/**/*.rb"].sort.each do |file|
     require file
   end
+
+  Animoto::Client::API_ENDPOINT = PartnerApp::Constants::Api2::HOST 
 end
