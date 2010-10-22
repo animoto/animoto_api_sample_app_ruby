@@ -48,3 +48,23 @@ ruby test/endpoints_test.rb
 
 * The Animoto API - http://animoto.com/developer/api
 * The Animoto API Client Gem - http://rubygems.org/gems/animoto
+
+== Copyright Information
+
+Copyright © 2010 Animoto Inc. All rights reserved. 
+
+Notice – this software is owned by Animoto Inc. (“Animoto”) and is being licensed to you in source code form on the condition that you comply these terms. By continuing to use the software, you are agreeing to be bound by these terms. If you disagree with these terms, you must immediately stop using the software and permanently destroy it, or return it to Animoto. 
+
+Animoto hereby grants to you a limited, personal, worldwide, nontransferable license to copy, execute, compile, reproduce, modify, prepare and have prepared derivative works of the software solely for the Purpose. The “Purpose” shall mean use of the software for accessing the Animoto Application Programming Interface (“API”) in accordance with Animoto’s Terms of Service, and any other terms and conditions applicable to your Animoto user account. 
+
+For purposes of clarity, you agree that you have no right to use the software for any other purpose other than the Purpose as defined above. This license does not include the right to distribute, transfer, sell, or otherwise commercialize the software or any portion thereof. 
+
+To the extent you make any derivative works from software, you hereby grant back to Animoto a worldwide, irrevocable, perpetual, sublicenseable, assignable, royalty-free license to such derivative works, in source and object code form. 
+
+You agree to include these terms in all copies made of the software, and to not remove or alter the above copyright notice or these terms in such copies. 
+
+THIS SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR THE WARRANTY OF NON-INFRINGEMENT. 
+
+IN NO EVENT SHALL ANIMOTO BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY SPECIAL, PUNITIVE, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND, OR ANY DAMAGES WHATSOEVER, INCLUDING, WITHOUT LIMITATION, THOSE RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER OR NOT ANIMOTO HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, AND ON ANY THEORY OF LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OF THIS SOFTWARE. 
+
+You agree to indemnify defend and hold Animoto, its parents, subsidiaries, affiliates, officers and employees, harmless from any liabilities, claims, expenses or demands, including reasonable attorneys’ fees and costs, made by any third party due to or arising out of your use of this software, derivative works created by you, the violation of laws, rules, regulations or these terms, and the infringement of any intellectual property right by your derivative works or by you.
