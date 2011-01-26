@@ -46,7 +46,7 @@ ruby test/endpoints_test.rb
 
 == More Information
 
-* The Animoto API - http://animoto.com/developer/api
+* The Animoto API - http://api-documentation.animoto.com/index.html
 * The Animoto API Client Gem - http://rubygems.org/gems/animoto
 
 == Copyright Information
