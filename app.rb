@@ -4,6 +4,7 @@ require 'sinatra/base'
 require 'animoto/client'
 require 'erb'
 require 'cgi'
+require 'digest/md5'
 
 class PartnerApp < Sinatra::Base
   @@callbacks = []

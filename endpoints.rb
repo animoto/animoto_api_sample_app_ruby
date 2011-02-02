@@ -70,6 +70,7 @@ get '/widget' do
   @params['nonce'] = Time.now.to_f
   @params['partnerId'] = PartnerApp::Constants::Partner::PARTNER_ID
   @params['partnerSecret'] = PartnerApp::Constants::Partner::PARTNER_SECRET
+  @params['timestamp'] = Time.now.to_i
   source = @params.keys.sort.map { |i| "#{i}=#{@params[i]}" }.join('&')
 
   # Let's generate the signature for our widget
