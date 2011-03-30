@@ -13,7 +13,7 @@ module PartnerApp::Constants
   end
    
   module Api2
-    HOST = 'https://api2-sandbox.animoto.com/'
+    HOST = 'https://platform-sandbox.animoto.com/'
   end
 
   module Platform
