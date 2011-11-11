@@ -1,5 +1,3 @@
-require 'app'
-
 # Sanity method to insure everything is working.
 get '/ping' do
   halt 200, 'pong'
