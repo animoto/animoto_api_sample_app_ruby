@@ -1,4 +1,4 @@
-set :views, File.join(File.basename(__FILE__), "views")
+set :views, File.join(File.dirname(__FILE__), "views")
 
 # Sanity method to insure everything is working.
 get '/ping' do
